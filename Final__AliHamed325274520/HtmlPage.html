@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html lang="he">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>לוח טיסות</title>
+    <link href="StyleSheet.css" rel="stylesheet" />
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>לוח טיסות </h1>
+    </header>
+    <!-- Search Inputs -->
+    <div class="search-container">
+
+
+        <label for="search-flight-number">מספר טיסה</label>
+        <input type="text" id="flightNumber">
+
+        <!--<input type="date" id="start-date">-->
+
+        <label for="search-date-range">תאריך</label>
+        <input type="date" id="endDate">
+
+        <label for="search-flight-type">סוג טיסה</label>
+        <select id="flightType">
+            <option value=""></option>
+            <option value="A">A</option>
+            <option value="D">D</option>
+        </select>
+
+        <label for="search-country">מדינה</label>
+        <input type="text" id="country">
+
+        <label for="search-city">עיר</label>
+        <input type="text" id="city">
+
+        <div class="search-option">
+            <button onclick="searchButton() ">חפש</button>
+            <button onclick="reset()">איפוס</button>
+        </div>
+
+
+        <div id="find-most-delayed">
+            <button>מצא חברת התעופה המאחרת ביותר</button>
+        </div>
+        <div id="flight-distribution-chart"></div>
+
+    </div>
+
+
+    <div>
+        <table id="flightsTable">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>מספר</th>
+                    <th>חברת התעופה</th>
+                    <th>זמן מתוכנן</th>
+                    <th>זמן בפועל</th>
+                    <th>סוג</th>
+                    <th>Airport</th>
+                    <th>עיר</th>
+                    <th>מדינה</th>
+                    <th>טירמנל</th>
+                    <th>סטטוס</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be added here dynamically using JavaScript -->
+            </tbody>
+        </table>
+
+    </div>
+    <main>
+
+        <div id="flight-details-overlay" class="overlay">
+            <div id="flight-details">
+            </div>
+        </div>
+    </main>
+
+    <script src="JavaScript3.js"></script>
+    <script src="JavaScript2.js"></script>
+    <!--<script src="JavaScript.js"></script>-->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+
+</body>
+</html>
